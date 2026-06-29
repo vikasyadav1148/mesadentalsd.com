@@ -1,17 +1,17 @@
 #!/bin/bash
-# Start MySQL
+# Start MariaDB service
 sudo service mariadb start
 
-# Wait for MySQL to be ready
-echo "Waiting for MySQL..."
+# Wait for MySQL to initialize
+echo "Waiting for MySQL to start..."
 until mysqladmin ping -h"localhost" -u"root" --silent; do
   sleep 2
 done
 
-# Import your SQL file if the database doesn't exist yet
+# Create database and import
 if ! mysql -u root -e "USE wordpress;" 2>/dev/null; then
-    echo "Creating database and importing..."
+    echo "Importing database..."
     mysql -u root -e "CREATE DATABASE wordpress;"
     mysql -u root wordpress < DB/mesadent_j0eb.sql
-    echo "Database import complete."
+    echo "Import finished."
 fi

@@ -5,7 +5,10 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": ["bmewburn.vscode-intelephense-client", "adpyke.vscode-sql-client"]
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "adpyke.vscode-sql-client"
+      ]
     }
   },
   "postCreateCommand": "bash .devcontainer/setup.sh"
