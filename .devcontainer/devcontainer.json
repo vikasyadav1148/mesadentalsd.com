@@ -1,9 +1,11 @@
 {
   "name": "WordPress Environment",
-  "image": "mcr.microsoft.com/devcontainers/php:8.2",
-  "features": {
-    "ghcr.io/devcontainers/features/mysql:1": {
-      "version": "8.0"
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["bmewburn.vscode-intelephense-client", "adpyke.vscode-sql-client"]
     }
   },
   "postCreateCommand": "bash .devcontainer/setup.sh"
